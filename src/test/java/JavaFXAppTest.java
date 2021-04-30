@@ -1,9 +1,12 @@
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class JavaFXAppTest {
+
     @Test
-    void aDummyTest() {
-        assertEquals(0,0);
+    void computeDivide() {
+        JavaFXApp test1 = new JavaFXApp();
+        assertEquals(0,test1.computeDivide(2,0));
     }
 }
