@@ -11,6 +11,6 @@ class JavaFXAppTest {
     @Test
     void computeDivide() {
         JavaFXApp test1 = new JavaFXApp();
-        assertEquals(0,test1.computeDivide(2,0));
+        assertEquals(2,test1.computeDivide(4,2));
     }
 }
