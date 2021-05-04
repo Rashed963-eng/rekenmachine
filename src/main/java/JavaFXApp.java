@@ -50,7 +50,7 @@ public class JavaFXApp extends Application {
 
         switch (operator) {
             case PLUS:
-                computation = new AddComputation();
+                computation = new PlusComputation();
                 break;
             case MIN:
                 break;
