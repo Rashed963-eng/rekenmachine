@@ -24,10 +24,12 @@ public class JavaFXApp extends Application {
     private static final String PLUS = "+";
     private static final String MULTIPLY = "*";
     private static final String DIVIDE = "/";
+    private static final String MIN = "-";
 
     private int getNumberFromTextField (TextField textField) {
         return Integer.parseInt (textField.getText ());
     }
+    private int result;
 
     protected int computeAdd (int number1, int number2) {
         return number1+number2;
@@ -43,23 +45,23 @@ public class JavaFXApp extends Application {
 
     private void compute (String operator) {
 
-        int result;
-        int number1 = getNumberFromTextField (txtNumber1);
-        int number2 = getNumberFromTextField (txtNumber2);
+        iComputation computation;
+
 
         switch (operator) {
             case PLUS:
-                result = computeAdd (number1, number2);
+                computation = new AddComputation();
+                break;
+            case MIN:
                 break;
             case MULTIPLY:
-                result = computeMultiply (number1, number2);
                 break;
             case DIVIDE:
-                result = computeDivide (number1, number2);
                 break;
-            default:
-                result = 0;
         }
+
+        result = computation.compute (number1, number2);
+
 
         txtResult.setText (String.valueOf (result));
     }
